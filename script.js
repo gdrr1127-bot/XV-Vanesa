@@ -16,6 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }, 2000);
     }
+    setTimeout(() => {
+    window.scrollTo(0, 0);
+}, 10);
+requestAnimationFrame(() => {
+    document.body.style.opacity = "1";
+});
 
     /* ABRIR INVITACIÓN */
     window.abrir = function () {
