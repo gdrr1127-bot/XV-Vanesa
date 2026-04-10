@@ -123,12 +123,16 @@ function crearExplosion() {
 /* CONTADOR */
 function iniciarContador() {
 
-    const fechaEvento = new Date("2026-04-25T00:00:00").getTime();
+    const fechaEvento = new Date(2026, 3, 25, 0, 0, 0).getTime();
 
     setInterval(() => {
 
         const ahora = new Date().getTime();
-        const diferencia = fechaEvento - ahora;
+        let diferencia = fechaEvento - ahora;
+
+        if (diferencia < 0) {
+            diferencia = 0;
+        }
 
         const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
         const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
